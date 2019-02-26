@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BookaholicFin.Models.Genre>
+@{
+    ViewBag.Title = "Store";
+}
+<h4 style="padding-top:70px;padding-left:28px;">
+    Select from @Model.Count() genres:
+</h4>
+<ul style="list-style-type:none;padding-bottom:150px;">
+    @foreach (var genre in Model)
+    {
+        <li style="display:block;padding:15px 30px;background-color:#F0FFFF;border-bottom:10px solid white">@Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })</li>
+    }
+</ul>

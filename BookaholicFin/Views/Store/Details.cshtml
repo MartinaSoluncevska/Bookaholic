@@ -1,0 +1,33 @@
+﻿@model BookaholicFin.Models.Book
+
+@{
+    ViewBag.Title = "Book - " + Model.Title;
+}
+
+<div style="padding-top:50px;padding-bottom:350px">
+<p>
+    <img alt="@Model.Title" src="@Model.CoverArtUrl" class="img-responsive" style="float:left;padding:28px;margin-right:40px"/>
+</p>
+
+<div id="book-details" style="text-align:left;padding:25px">
+    <h2>@Model.Title</h2>
+    <p>
+        <em>Genre:</em>
+        @Model.Genre.Name
+    </p>
+    <p>
+        <em>Artist:</em>
+        @Model.Author.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}", Model.Price)
+    </p>
+    <p class="btn btn-default">
+        <span class="glyphicon glyphicon-shopping-cart" style="color:lightblue"></span>
+        @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = Model.BookId }, "")
+    </p>
+</div>
+</div>
+

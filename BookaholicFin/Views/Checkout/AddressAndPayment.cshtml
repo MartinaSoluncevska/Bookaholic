@@ -1,0 +1,35 @@
+﻿
+@model BookaholicFin.Models.Order
+
+@{
+    ViewBag.Title = "Address And Payment";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    <div style="padding-left:28px">
+    <h2 style="padding-top:50px">Address And Payment</h2>
+    <fieldset>
+        <legend>Shipping Information</legend>
+
+        @Html.EditorForModel()
+    </fieldset>
+        <br/>
+    <fieldset>
+        <legend>Payment</legend>
+        <p>We're running a promotion: all our books are free with the promo code: "FREE"</p>
+
+        <div class="editor-label">
+            @Html.Label("Promo Code")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("PromoCode")
+        </div>
+    </fieldset>
+    <br/>
+    <input class="btn btn-success" type="submit" value="Submit Order" />
+    </div>
+}

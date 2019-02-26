@@ -1,0 +1,22 @@
+﻿@model BookaholicFin.Models.Genre
+
+@{
+    ViewBag.Title = "Browse Books";
+}
+
+<div class="genre">
+    <div style="padding:28px">
+    <h3 style="padding-top:30px"><strong>@Model.Name</strong></h3>
+    </div>
+    <div id="book" style="overflow:hidden">
+        @foreach (var book in Model.Books)
+        {
+            <div id="book-details" style="display:inline-block;width:190px;text-align:center;float:left;padding-right:10px;padding-bottom:150px">
+                <a href="@Url.Action("Details", new { id = book.BookId })">
+                    <img alt="@book.Title" src="@book.CoverArtUrl" style="width:100px;height:150px;"/>
+                </a>
+                <span style="display:block">@book.Title</span>
+            </div>
+        }
+    </div>
+</div>

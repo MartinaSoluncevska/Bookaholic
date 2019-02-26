@@ -1,0 +1,9 @@
+﻿@model IEnumerable<BookaholicFin.Models.Genre>
+
+@foreach (var genre in Model)
+    {
+         <div class="col-md-4">
+            @Html.ActionLink(genre.Name,"Browse", "Store",new { Genre = genre.Name }, null)
+             <a class="btn btn-default" role="button" href=@Url.Content("~/Store")>See more>></a>
+         </div>
+}

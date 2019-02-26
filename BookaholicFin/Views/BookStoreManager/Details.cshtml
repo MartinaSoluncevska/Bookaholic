@@ -1,0 +1,34 @@
+﻿@model BookaholicFin.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div style="padding-left:28px;padding-bottom:150px">
+<h2>Book details</h2>
+<table class="table table-responsive" style="padding-left:28px">
+    <tr>
+        <th class="display-label">Genre</th>
+
+        <th class="display-label">Author</th>
+
+        <th class="display-label">Title</th>
+
+        <th class="display-label">Price</th>
+    </tr>
+    <tr>
+        <td class="display-field">@Html.DisplayFor(model => model.Genre.Name)</td>
+
+        <td class="display-field">@Html.DisplayFor(model => model.Author.Name)</td>
+
+        <td class="display-field">@Html.DisplayFor(model => model.Title)</td>
+
+        <td class="display-field">@Html.DisplayFor(model => model.Price)</td>
+    </tr>
+</table>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BookId })  |
+        @Html.ActionLink("Back to List", "Index")
+
+</div>

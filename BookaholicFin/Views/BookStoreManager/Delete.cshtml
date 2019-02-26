@@ -1,0 +1,26 @@
+﻿@model BookaholicFin.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div style="padding-left:28px; padding-bottom:100px">
+<h2 style="padding-top:50px">Delete Confirmation</h2>
+
+<p>
+    Are you sure you want to delete the book titled
+    <strong>@Model.Title</strong>?
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <input class="btn btn-block" type="submit" value="Delete" />
+    </p>
+    <br /><br />
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+}
+</div>
